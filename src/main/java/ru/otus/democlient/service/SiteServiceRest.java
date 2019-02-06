@@ -27,7 +27,6 @@ public class SiteServiceRest implements SiteService {
     }
 
     @Cacheable("sites")
-    @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 5000))
     @Override
     public List<SiteInfo> findAllBlockedSites() {
         return restTemplate.exchange(
