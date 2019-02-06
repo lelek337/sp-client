@@ -26,7 +26,6 @@ public class SiteServiceRest implements SiteService {
         this.serverUrl = serverUrl;
     }
 
-    @Cacheable("sites")
     @Override
     public List<SiteInfo> findAllBlockedSites() {
         return restTemplate.exchange(
